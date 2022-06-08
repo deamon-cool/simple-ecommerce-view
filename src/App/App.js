@@ -18,6 +18,36 @@ function App() {
   const [popularitySorting, setPopularitySorting] = useState('');
   const [priceSorting, setPriceSorting] = useState('');
 
+  useEffect(() => {
+    const abortController = new AbortController();
+
+
+    function downloadData() {
+      const init = {
+        method: 'GET',
+        headers: { 'Content-Type': 'application/json' },
+        signal: abortController.signal
+      };
+
+      fetch(PRODUCTS_URL, init)
+        .then(res => res.json())
+        .then(data => {
+          setData(data);
+          setLoading('');
+        })
+        .catch(err => {
+          setError('Cannot download products')
+        });
+    }
+
+    downloadData();
+
+    return () => {
+      if (!data) {
+        abortController.abort();
+      }
+    }
+  }, []);
   const searchHandler = (val) => {
     setSearchedProduct(val)
   };
