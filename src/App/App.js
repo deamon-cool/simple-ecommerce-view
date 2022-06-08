@@ -82,7 +82,10 @@ function App() {
   };
 
   const priceClickHandler = () => {
-    //setPriceSorting
+    setPriceSorting(state => (
+      state === '↑' ? '↓' : '↑'
+    ));
+    setPopularitySorting('');
   };
 
   const selectHandler = (val) => {
