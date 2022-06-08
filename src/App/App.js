@@ -3,6 +3,7 @@ import Button from '../Button/Button';
 import Container from '../Container/Container';
 import FilterBar from '../FilterBar/FilterBar';
 import Input from '../Input/Input';
+import Product from '../Product/Product';
 import Select from '../Select/Select';
 import classes from './App.module.css';
 
