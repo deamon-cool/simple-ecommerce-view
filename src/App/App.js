@@ -122,6 +122,19 @@ function App() {
 
     return a.rating.count - b.rating.count;
   }
+
+  function sortingByPrice(a, b) {
+    if (priceSorting === '↑') {
+      return a.price - b.price;
+    }
+
+    if (priceSorting === '↓') {
+      return b.price - a.price;
+    }
+
+    return a.price - b.price;
+  }
+
   const categories = getCategories(products);
 
   let filterPrice = maxPrice === '' ? Infinity : parseFloat(maxPrice);
