@@ -18,6 +18,21 @@ function App() {
   const [priceSorting, setPriceSorting] = useState('');
   const [category, setCategory] = useState('');
 
+  function getDescriptionView() {
+    let obj = {}
+    for (let i = 0; i < products.length; i++) {
+      const product = products[i];
+      obj = {
+        ...obj,
+        [product.id]: false
+      };
+    }
+
+    return obj;
+  }
+
+  const [descriptionShow, setDescriptionShow] = useState(getDescriptionView());
+
   // useEffect(() => {
   //   const abortController = new AbortController();
 
@@ -91,6 +106,13 @@ function App() {
 
   const selectHandler = (val) => {
     setCategory(val);
+  };
+
+  const clickDescriptionHandler = (id) => {
+    setDescriptionShow(state => ({
+      ...state,
+      [id]: !state.id
+    }));
   };
 
   const clearFilters = () => {
@@ -167,7 +189,11 @@ function App() {
   }
 
   const productCards = filteredProducts.map(product => {
-    return <Product key={product.id} product={product} />
+    return <Product
+      key={product.id}
+      clickDescriptionHandler={() => clickDescriptionHandler(product.id)}
+      showDescription={descriptionShow[product.id]}
+      product={product} />
   });
 
   return (
