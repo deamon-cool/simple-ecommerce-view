@@ -139,7 +139,7 @@ function App() {
 
       <Button
         text='In Basket (5)'
-        customStyle={{ display: 'block', margin: '0 auto 15px auto' }}  />
+        customStyle={{ display: 'block', margin: '0 auto 15px auto' }} />
     </div>
   );
 }
