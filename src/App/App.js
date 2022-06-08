@@ -111,7 +111,7 @@ function App() {
   const clickDescriptionHandler = (id) => {
     setDescriptionShow(state => ({
       ...state,
-      [id]: !state.id
+      [id]: !state[id]
     }));
   };
 
