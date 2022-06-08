@@ -15,9 +15,12 @@ export default function Product(props) {
   return (
     <article className={classes.Product} style={customStyle}>
       <img src={image} alt='product image' />
-      <h4>{title}</h4>
-      <h5>${price}</h5>
-      <Button clickHandler={clickDescriptionHandler} text='Description' />
+      <h3>{title}</h3>
+      <h4>${price}</h4>
+      <Button
+        clickHandler={clickDescriptionHandler}
+        text='Description'
+        customStyle={{ display: 'block', margin: '0 auto' }} />
     </article>
   );
 }
