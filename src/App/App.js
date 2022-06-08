@@ -12,8 +12,6 @@ import Select from '../Select/Select';
 // const PRODUCTS_URL = 'https://fakestoreapi.com/products';
 
 function App() {
-  const [loading, setLoading] = useState('Loading...');
-  const [error, setError] = useState('');
   const [searchedProduct, setSearchedProduct] = useState('');
   const [maxPrice, setMaxPrice] = useState('');
   const [popularitySorting, setPopularitySorting] = useState('');
@@ -109,8 +107,6 @@ function App() {
   return (
     <div className={classes.App}>
       <Container>
-        {error}
-        {loading}
         {productCards}
       </Container>
 
