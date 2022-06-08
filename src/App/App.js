@@ -88,6 +88,20 @@ function App() {
 
   };
 
+  function getCategories(products) {
+    let l_categories = [];
+
+    products.forEach(product => {
+      if (!l_categories.includes(product.category)) {
+        l_categories.push(product.category);
+      }
+    });
+
+    return l_categories;
+  }
+  
+  const categories = getCategories(products);
+
   const productCards = products.map(product => {
     return <Product key={product.id} product={product} />
   });
