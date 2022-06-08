@@ -9,9 +9,7 @@ import FilterBar from '../FilterBar/FilterBar';
 import Input from '../Input/Input';
 import Product from '../Product/Product';
 import Select from '../Select/Select';
-
-
-const PRODUCTS_URL = 'https://fakestoreapi.com/products';
+// const PRODUCTS_URL = 'https://fakestoreapi.com/products';
 
 function App() {
   const [loading, setLoading] = useState('Loading...');
@@ -69,6 +67,8 @@ function App() {
   //     }
   //   }
   // }, []);
+
+
 
   const searchHandler = (val) => {
     // setSearchedProduct(val);
