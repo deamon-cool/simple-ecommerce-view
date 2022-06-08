@@ -21,6 +21,17 @@ function App() {
   useEffect(() => {
     const abortController = new AbortController();
 
+    function getCategories(data) {
+      let l_categories = [];
+
+      data.forEach(product => {
+        if (!l_categories.includes(product.category)) {
+          l_categories.push(product.category);
+        }
+      });
+
+      return l_categories;
+    }
 
     function downloadData() {
       const init = {
@@ -33,6 +44,8 @@ function App() {
         .then(res => res.json())
         .then(data => {
           setData(data);
+          const categories = getCategories(data);
+          setCategories(categories);
           setLoading('');
         })
         .catch(err => {
