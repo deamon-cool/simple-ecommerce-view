@@ -1,11 +1,15 @@
 import { useEffect, useState } from 'react';
+import classes from './App.module.css';
+
+import products from '../fakeProducts/products.json';
+
 import Button from '../Button/Button';
 import Container from '../Container/Container';
 import FilterBar from '../FilterBar/FilterBar';
 import Input from '../Input/Input';
 import Product from '../Product/Product';
 import Select from '../Select/Select';
-import classes from './App.module.css';
+
 
 const PRODUCTS_URL = 'https://fakestoreapi.com/products';
 
@@ -19,52 +23,52 @@ function App() {
   const [popularitySorting, setPopularitySorting] = useState('');
   const [priceSorting, setPriceSorting] = useState('');
 
-  useEffect(() => {
-    const abortController = new AbortController();
+  // useEffect(() => {
+  //   const abortController = new AbortController();
 
-    function getCategories(products) {
-      let l_categories = [];
+  //   function getCategories(products) {
+  //     let l_categories = [];
 
-      products.forEach(product => {
-        if (!l_categories.includes(product.category)) {
-          l_categories.push(product.category);
-        }
-      });
+  //     products.forEach(product => {
+  //       if (!l_categories.includes(product.category)) {
+  //         l_categories.push(product.category);
+  //       }
+  //     });
 
-      return l_categories;
-    }
+  //     return l_categories;
+  //   }
 
-    function downloadProducts() {
-      const init = {
-        method: 'GET',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        signal: abortController.signal
-      };
+  //   function downloadProducts() {
+  //     const init = {
+  //       method: 'GET',
+  //       headers: {
+  //         'Content-Type': 'application/json'
+  //       },
+  //       signal: abortController.signal
+  //     };
 
-      fetch(PRODUCTS_URL, init)
-        .then(res => res.json())
-        .then(products => {
-          setProducts(products);
-          const categories = getCategories(products);
-          setCategories(categories);
-          setLoading('');
-        })
-        .catch(err => {
-          setError('Cannot download products');
-          setLoading('');
-        });
-    }
+  //     fetch(PRODUCTS_URL, init)
+  //       .then(res => res.json())
+  //       .then(products => {
+  //         setProducts(products);
+  //         const categories = getCategories(products);
+  //         setCategories(categories);
+  //         setLoading('');
+  //       })
+  //       .catch(err => {
+  //         setError('Cannot download products');
+  //         setLoading('');
+  //       });
+  //   }
 
-    downloadProducts();
+  //   downloadProducts();
 
-    return () => {
-      if (!products) {
-        abortController.abort();
-      }
-    }
-  }, []);
+  //   return () => {
+  //     if (!products) {
+  //       abortController.abort();
+  //     }
+  //   }
+  // }, []);
 
   const searchHandler = (val) => {
     // setSearchedProduct(val);
