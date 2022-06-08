@@ -11,7 +11,7 @@ const PRODUCTS_URL = 'https://fakestoreapi.com/products';
 function App() {
   const [loading, setLoading] = useState('Loading...');
   const [error, setError] = useState('');
-  const [data, setData] = useState([]);
+  const [products, setProducts] = useState([]);
   const [categories, setCategories] = useState(['Loading...']);
   const [searchedProduct, setSearchedProduct] = useState('');
   const [maxPrice, setMaxPrice] = useState('');
@@ -21,10 +21,10 @@ function App() {
   useEffect(() => {
     const abortController = new AbortController();
 
-    function getCategories(data) {
+    function getCategories(products) {
       let l_categories = [];
 
-      data.forEach(product => {
+      products.forEach(product => {
         if (!l_categories.includes(product.category)) {
           l_categories.push(product.category);
         }
@@ -33,7 +33,7 @@ function App() {
       return l_categories;
     }
 
-    function downloadData() {
+    function downloadProducts() {
       const init = {
         method: 'GET',
         headers: { 'Content-Type': 'application/json' },
@@ -42,9 +42,9 @@ function App() {
 
       fetch(PRODUCTS_URL, init)
         .then(res => res.json())
-        .then(data => {
-          setData(data);
-          const categories = getCategories(data);
+        .then(products => {
+          setProducts(products);
+          const categories = getCategories(products);
           setCategories(categories);
           setLoading('');
         })
@@ -53,10 +53,10 @@ function App() {
         });
     }
 
-    downloadData();
+    downloadProducts();
 
     return () => {
-      if (!data) {
+      if (!products) {
         abortController.abort();
       }
     }
