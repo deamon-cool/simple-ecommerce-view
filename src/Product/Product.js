@@ -1,12 +1,18 @@
-import Button from '../Button/Button';
 import classes from './Product.module.css';
+
+import Button from '../Button/Button';
+import defaultImgSrc from '../fakeProducts/product.png';
 
 export default function Product(props) {
   const customStyle = props.customStyle;
   const id = props.product.id;
-  const image = props.product.image;
+  let image = props.product.image;
   const title = props.product.title;
   const price = props.product.price;
+
+  if (image === '') {
+    image = defaultImgSrc;
+  }
 
   const clickDescriptionHandler = () => {
     props.clickDescriptionHandler(id);
