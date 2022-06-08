@@ -156,7 +156,7 @@ function App() {
           placeholder='Max price' />
         <Button
           clickHandler={popularityClickHandler}
-          text='Popularity' />
+          text={buttonPopularityText} />
         <Button
           clickHandler={priceClickHandler}
           text='Price' />
