@@ -172,7 +172,7 @@ function App() {
           text={buttonPopularityText} />
         <Button
           clickHandler={priceClickHandler}
-          text='Price' />
+          text={buttonPriceText} />
         <Select
           changeHandler={selectHandler}
           optionsArr={categories}
