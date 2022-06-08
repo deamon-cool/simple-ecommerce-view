@@ -69,9 +69,9 @@ function App() {
   };
 
   const changePriceHandler = (val) => {
-    // validation number
-    // setMaxPrice(val);
-    //parse float maxPrice to search products
+    if (!isNaN(val)) {
+      setMaxPrice(val);
+    }
   };
 
   const popularityClickHandler = () => {
