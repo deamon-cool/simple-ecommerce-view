@@ -127,6 +127,14 @@ function App() {
     parseFloat(product.price) <= filterPrice
   );
 
+  let buttonPopularityText = 'Popularity';
+  if (popularitySorting !== '') {
+    filteredProducts.sort((a, b) =>
+      sortingByPopularity(a, b)
+    );
+
+    buttonPopularityText += ` ${popularitySorting}`;
+  }
   const productCards = filteredProducts.map(product => {
     return <Product key={product.id} product={product} />
   });
