@@ -26,7 +26,7 @@ export default function Product(props) {
       <Button
         clickHandler={clickDescriptionHandler}
         text='Description'
-        customStyle={{ display: 'block', margin: '0 auto' }} />
+        customStyle={{ display: 'block', margin: '0 auto 5px auto' }} />
     </article>
   );
 }
