@@ -20,7 +20,7 @@ export default function Select(props) {
   return (
     <select className={classes.Select} style={customStyle}
       onChange={changeHandler}>
-      <option>{placeholder}</option>
+      <option value=''>{placeholder}</option>
       {options}
     </select>
   );
