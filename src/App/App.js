@@ -100,8 +100,10 @@ function App() {
 
   const categories = getCategories(products);
 
+  let filterPrice = maxPrice === '' ? Infinity : parseFloat(maxPrice);
   const filteredProducts = products.filter(product =>
-    product.title.toLocaleLowerCase().startsWith(searchedWord)
+    product.title.toLocaleLowerCase().startsWith(searchedWord) &&
+    parseFloat(product.price) <= filterPrice
   );
 
   const productCards = filteredProducts.map(product => {
