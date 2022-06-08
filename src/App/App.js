@@ -86,6 +86,13 @@ function App() {
 
   };
 
+  const clearFilters = () => {
+    setSearchedWord('');
+    setMaxPrice('');
+    setPopularitySorting('');
+    setPriceSorting('');
+  }
+
   function getCategories(products) {
     let l_categories = [];
 
@@ -135,6 +142,9 @@ function App() {
           changeHandler={selectHandler}
           optionsArr={categories}
           placeholder='Select category' />
+        <Button
+          clickHandler={clearFilters}
+          text='Clear filters' />
       </FilterBar>
 
       <Button
