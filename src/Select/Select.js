@@ -5,7 +5,7 @@ export default function Select(props) {
   const placeholder = props.placeholder;
   const customStyle = props.customStyle;
 
-  function changeHanlder(e) {
+  function changeHandler(e) {
     props.changeHandler(e.target.value);
   }
 
@@ -19,7 +19,7 @@ export default function Select(props) {
 
   return (
     <select className={classes.Select} style={customStyle}
-      onChange={changeHanlder}>
+      onChange={changeHandler}>
       <option>{placeholder}</option>
       {options}
     </select>
