@@ -4,13 +4,13 @@ export default function Button(props) {
   const text = props.text;
   const customStyle = props.customStyle;
 
-  function clickHanlder(e) {
-    props.clickHanlder();
+  function clickHandler() {
+    props.clickHandler();
   }
 
   return (
     <button className={classes.Button} style={customStyle}
-      onClick={clickHanlder}>
+      onClick={clickHandler}>
       {text}
     </button>
   );
