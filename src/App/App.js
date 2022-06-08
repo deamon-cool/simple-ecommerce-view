@@ -52,7 +52,8 @@ function App() {
           setLoading('');
         })
         .catch(err => {
-          setError('Cannot download products')
+          setError('Cannot download products');
+          setLoading('');
         });
     }
 
