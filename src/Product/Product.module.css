@@ -4,6 +4,7 @@
   border: 1px solid orange;
   background-color: rgba(255, 166, 0, 0.2);
   margin: 5px;
+  cursor: pointer;
 }
 
 .Product:hover {
