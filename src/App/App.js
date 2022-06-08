@@ -108,7 +108,7 @@ function App() {
           text='Price' />
         <Select
           changeHandler={selectHandler}
-          optionsArr={['aaa', 'bbb', 'ccc']}
+          optionsArr={categories}
           placeholder='Select category' />
       </FilterBar>
     </div>
