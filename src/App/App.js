@@ -138,6 +138,16 @@ function App() {
 
     buttonPopularityText += ` ${popularitySorting}`;
   }
+
+  let buttonPriceText = '$';
+  if (priceSorting !== '') {
+    filteredProducts.sort((a, b) =>
+      sortingByPrice(a, b)
+    );
+
+    buttonPriceText = `$ ${priceSorting}`;
+  }
+
   const productCards = filteredProducts.map(product => {
     return <Product key={product.id} product={product} />
   });
