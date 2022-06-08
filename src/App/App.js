@@ -12,7 +12,7 @@ import Select from '../Select/Select';
 // const PRODUCTS_URL = 'https://fakestoreapi.com/products';
 
 function App() {
-  const [searchedProduct, setSearchedProduct] = useState('');
+  const [searchedWord, setSearchedWord] = useState('');
   const [maxPrice, setMaxPrice] = useState('');
   const [popularitySorting, setPopularitySorting] = useState('');
   const [priceSorting, setPriceSorting] = useState('');
@@ -65,7 +65,7 @@ function App() {
   // }, []);
 
   const searchHandler = (val) => {
-    // setSearchedProduct(val);
+    setSearchedWord(val);
   };
 
   const changePriceHandler = (val) => {
@@ -113,7 +113,7 @@ function App() {
       <FilterBar>
         <Input
           changeHandler={searchHandler}
-          value={searchedProduct}
+          value={searchedWord}
           placeholder='Search...' />
         <Input
           changeHandler={changePriceHandler}
