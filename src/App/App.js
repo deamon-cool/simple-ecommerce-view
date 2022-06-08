@@ -16,6 +16,7 @@ function App() {
   const [maxPrice, setMaxPrice] = useState('');
   const [popularitySorting, setPopularitySorting] = useState('');
   const [priceSorting, setPriceSorting] = useState('');
+  const [category, setCategory] = useState('');
 
   // useEffect(() => {
   //   const abortController = new AbortController();
@@ -89,7 +90,7 @@ function App() {
   };
 
   const selectHandler = (val) => {
-
+    setCategory(val);
   };
 
   const clearFilters = () => {
@@ -137,11 +138,15 @@ function App() {
 
   const categories = getCategories(products);
 
-  let filterPrice = maxPrice === '' ? Infinity : parseFloat(maxPrice);
-  const filteredProducts = products.filter(product =>
+  const filterPrice = maxPrice === '' ? Infinity : parseFloat(maxPrice);
+  let filteredProducts = products.filter(product =>
     product.title.toLocaleLowerCase().startsWith(searchedWord) &&
     parseFloat(product.price) <= filterPrice
   );
+
+  if (category !== '') {
+    filteredProducts = filteredProducts.filter(product => product.category === category);
+  }
 
   let buttonPopularityText = 'Popularity';
   if (popularitySorting !== '') {
