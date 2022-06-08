@@ -14,8 +14,6 @@ import Select from '../Select/Select';
 function App() {
   const [loading, setLoading] = useState('Loading...');
   const [error, setError] = useState('');
-  const [products, setProducts] = useState([]);
-  const [categories, setCategories] = useState(['Loading...']);
   const [searchedProduct, setSearchedProduct] = useState('');
   const [maxPrice, setMaxPrice] = useState('');
   const [popularitySorting, setPopularitySorting] = useState('');
@@ -67,8 +65,6 @@ function App() {
   //     }
   //   }
   // }, []);
-
-
 
   const searchHandler = (val) => {
     // setSearchedProduct(val);
