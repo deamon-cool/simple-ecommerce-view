@@ -108,6 +108,17 @@ function App() {
     return l_categories;
   }
 
+  function sortingByPopularity(a, b) {
+    if (popularitySorting === '↑') {
+      return a.rating.count - b.rating.count;
+    }
+
+    if (popularitySorting === '↓') {
+      return b.rating.count - a.rating.count;
+    }
+
+    return a.rating.count - b.rating.count;
+  }
   const categories = getCategories(products);
 
   let filterPrice = maxPrice === '' ? Infinity : parseFloat(maxPrice);
