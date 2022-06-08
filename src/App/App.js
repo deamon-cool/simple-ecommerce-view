@@ -62,13 +62,14 @@ function App() {
       }
     }
   }, []);
+
   const searchHandler = (val) => {
-    setSearchedProduct(val)
+    // setSearchedProduct(val);
   };
 
   const changePriceHandler = (val) => {
-    setMaxPrice(val);
     // validation number
+    // setMaxPrice(val);
     //parse float maxPrice to search products
   };
 
@@ -81,7 +82,7 @@ function App() {
   };
 
   const selectHandler = (val) => {
-    console.log(val)
+
   };
 
   const productCards = products.map(product => {
