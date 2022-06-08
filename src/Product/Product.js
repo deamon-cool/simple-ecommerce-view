@@ -14,7 +14,7 @@ export default function Product(props) {
 
   return (
     <article className={classes.Product} style={customStyle}>
-      <img src={image} />
+      <img src={image} alt='product image' />
       <h4>{title}</h4>
       <h5>${price}</h5>
       <Button clickHandler={clickDescriptionHandler} text='Description' />
