@@ -83,12 +83,16 @@ function App() {
     console.log(val)
   };
 
+  const productCards = products.map(product => {
+    return <Product key={product.id} product={product} />
+  });
+
   return (
     <div className={classes.App}>
       <Container>
         {error}
         {loading}
-        {/* {products} */}
+        {productCards}
       </Container>
 
       <FilterBar>
