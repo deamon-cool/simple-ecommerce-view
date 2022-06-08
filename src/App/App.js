@@ -9,6 +9,10 @@ import classes from './App.module.css';
 const PRODUCTS_URL = 'https://fakestoreapi.com/products';
 
 function App() {
+  const [loading, setLoading] = useState('Loading...');
+  const [error, setError] = useState('');
+  const [data, setData] = useState([]);
+  const [categories, setCategories] = useState(['Loading...']);
   const [searchedProduct, setSearchedProduct] = useState('');
   const [maxPrice, setMaxPrice] = useState('');
   const [popularitySorting, setPopularitySorting] = useState('');
