@@ -6,6 +6,8 @@ import Input from '../Input/Input';
 import Select from '../Select/Select';
 import classes from './App.module.css';
 
+const PRODUCTS_URL = 'https://fakestoreapi.com/products';
+
 function App() {
   const [searchedProduct, setSearchedProduct] = useState('');
   const [maxPrice, setMaxPrice] = useState('');
