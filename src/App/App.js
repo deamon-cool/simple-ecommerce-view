@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import Button from '../Button/Button';
+import Container from '../Container/Container';
 import FilterBar from '../FilterBar/FilterBar';
 import Input from '../Input/Input';
 import Select from '../Select/Select';
@@ -35,6 +36,12 @@ function App() {
 
   return (
     <div className={classes.App}>
+      <Container>
+        {error}
+        {loading}
+        {/* {products} */}
+      </Container>
+
       <FilterBar>
         <Input
           changeHandler={searchHandler}
