@@ -5,7 +5,7 @@ export default function FilterBar(props) {
 
   return (
     <nav className={classes.FilterBar} style={customStyle}>
-      {children}
+      {props.children}
     </nav>
   );
 }
