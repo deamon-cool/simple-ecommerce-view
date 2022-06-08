@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Button from '../Button/Button';
 import Container from '../Container/Container';
 import FilterBar from '../FilterBar/FilterBar';
