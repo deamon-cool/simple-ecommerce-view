@@ -97,10 +97,14 @@ function App() {
 
     return l_categories;
   }
-  
+
   const categories = getCategories(products);
 
-  const productCards = products.map(product => {
+  const filteredProducts = products.filter(product =>
+    product.title.toLocaleLowerCase().startsWith(searchedWord)
+  );
+
+  const productCards = filteredProducts.map(product => {
     return <Product key={product.id} product={product} />
   });
 
